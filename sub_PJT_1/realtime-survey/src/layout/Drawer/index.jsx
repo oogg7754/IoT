@@ -23,7 +23,10 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@material-ui/core";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 import SearchIcon from "@material-ui/icons/Search";
+import Badge from "@material-ui/core/Badge";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -98,7 +101,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
-
 export default function PersistentDrawerLeft() {
   const history = useHistory();
   const classes = useStyles();
@@ -133,7 +135,7 @@ export default function PersistentDrawerLeft() {
   const signInClose = () => {
     setSignInDialogOpen(false);
   };
-
+  // 로그인
   const signUpClickOpen = () => {
     setSignInDialogOpen(false);
     setSignUpDialogOpen(true);
@@ -142,6 +144,32 @@ export default function PersistentDrawerLeft() {
   const signUpClose = () => {
     setSignUpDialogOpen(false);
   };
+  // 회원정보 변경
+  const [editProfileDialogOpen, seteditProfileDialogOpen] = React.useState(
+    false
+  );
+  const editProfileClickOpen = () => {
+    seteditProfileDialogOpen(true);
+  };
+  const editProfileClose = () => {
+    seteditProfileDialogOpen(false);
+  };
+  // 회원가입
+  const [
+    changePasswordDialogOpen,
+    setchangePasswordDialogOpen,
+  ] = React.useState(false);
+  const changePasswordClickOpen = () => {
+    setchangePasswordDialogOpen(true);
+  };
+  const changePasswordClose = () => {
+    setchangePasswordDialogOpen(false);
+  };
+
+  const onClickRedirectPathHandler = (name) => () => {
+    window.scrollTo(0, 0);
+    history.push(name);
+  };
 
   return (
     <div className={classes.root}>
@@ -149,6 +177,7 @@ export default function PersistentDrawerLeft() {
         <CssBaseline />
         <AppBar position="fixed" color="primary">
           <Toolbar>
+            {/* Drawer 여는 버튼 */}
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -193,7 +222,7 @@ export default function PersistentDrawerLeft() {
                     <Button
                       color="primary"
                       variant="contained"
-                      //onClick={window.scrollTo(0, 0)}
+                      onClick={onClickRedirectPathHandler("/CreateVote")}
                       className="header-button"
                     >
                       Create a Vote
@@ -347,7 +376,7 @@ export default function PersistentDrawerLeft() {
             </Grid>
           </Toolbar>
         </AppBar>
-
+        {/* Drawer 열면 보이는 부분 */}
         <Drawer
           className={classes.drawer}
           variant="persistent"
@@ -372,43 +401,191 @@ export default function PersistentDrawerLeft() {
               <ListItemText secondary="Please log in" />
             </ListItem>
             <ListItem>
-              <Button color="primary">Sign In</Button>
+              <Button color="primary" onClick={signInClickOpen}>
+                Sign In
+              </Button>
             </ListItem>
             <ListItem>
               <ListItemText secondary="Wasn't a member yet?" />
             </ListItem>
             <ListItem>
-              <Button color="primary">Sign Up</Button>
+              <Button color="primary" onClick={signUpClickOpen}>
+                Sign Up
+              </Button>
             </ListItem>
           </List>
           <Divider />
           <List>
-            {[
-              "Main Page",
-              "My Page",
-              "Create Vote",
-              "Company Info",
-              "Contact Us",
-            ].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
+            <ListItem
+              button
+              key={"Main Page"}
+              onClick={() => {
+                history.push("/");
+                handleDrawerClose();
+              }}
+            >
+              <ListItemText primary={"Main Page"} />
+            </ListItem>
+            <ListItem
+              button
+              key={"My Page"}
+              onClick={() => {
+                history.push("/");
+                handleDrawerClose();
+              }}
+            >
+              <ListItemText primary={"My Page"} />
+            </ListItem>
+            <ListItem
+              button
+              key={"Create Vote"}
+              onClick={() => {
+                history.push("/CreateVote");
+                handleDrawerClose();
+              }}
+            >
+              <ListItemText primary={"Create Vote"} />
+            </ListItem>
+            <ListItem
+              button
+              key={"Company Info"}
+              onClick={() => {
+                history.push("/AboutMe");
+                handleDrawerClose();
+              }}
+            >
+              <ListItemText primary={"Company Info"} />
+            </ListItem>
+            <ListItem
+              button
+              key={"Contact Us"}
+              onClick={() => {
+                history.push("/ContactUs");
+                handleDrawerClose();
+              }}
+            >
+              <ListItemText primary={"Contact Us"} />
+            </ListItem>
           </List>
           <Divider />
           <List>
             <ListItem alignItems="center">
               <ListItemAvatar>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <Avatar src="/images/account_icon" />
               </ListItemAvatar>
               <List>
-                <ListItem button key="Edit Profile">
+                {/* edit profile */}
+                <ListItem
+                  button
+                  color="primary"
+                  variant="contained"
+                  onClick={editProfileClickOpen}
+                  className="edit-profile-button"
+                >
                   <ListItemText primary="Edit Profile" />
                 </ListItem>
-                <ListItem button key="Change Pass">
+                {/* Edit Profile dialog */}
+                <Dialog
+                  open={editProfileDialogOpen}
+                  onClose={editProfileClose}
+                  aria-labelledby="form-dialog-title"
+                >
+                  <DialogTitle id="form-dialog-title">
+                    Edit Profile{" "}
+                  </DialogTitle>
+                  <DialogContent>
+                    <Badge color="primary" variant="dot">
+                      <Avatar src="/images/account_icon" />
+                    </Badge>
+                  </DialogContent>
+
+                  <DialogContent>
+                    <TextField
+                      id="New Nickname"
+                      label="New Nickname*"
+                      variant="outlined"
+                      fullWidth
+                    />
+                  </DialogContent>
+                  <DialogContent>
+                    <TextField
+                      id="Password Confirmation"
+                      label="Password Confirmation*"
+                      type="password"
+                      variant="outlined"
+                      fullWidth
+                    />
+                  </DialogContent>
+                  <DialogContent>
+                    <Button
+                      onClick={editProfileClose}
+                      color="primary"
+                      variant="contained"
+                      fullWidth
+                    >
+                      Submit
+                    </Button>
+                  </DialogContent>
+                </Dialog>
+                {/* change password */}
+                <ListItem
+                  button
+                  key="Sign Out"
+                  variant="contained"
+                  onClick={changePasswordClickOpen}
+                  className="change-pass-button"
+                >
                   <ListItemText primary="Change Pass" />
                 </ListItem>
-                <ListItem button key="Sign Out">
+                {/* Change Pass dialog */}
+                <Dialog
+                  open={changePasswordDialogOpen}
+                  onClose={changePasswordClose}
+                  aria-labelledby="form-dialog-title"
+                >
+                  <DialogTitle id="form-dialog-title">
+                    Change Password{" "}
+                  </DialogTitle>
+                  <DialogContent>
+                    <TextField
+                      id="Current Password"
+                      label="Current Password*"
+                      type="password"
+                      variant="outlined"
+                      fullWidth
+                    />
+                  </DialogContent>
+                  <DialogContent>
+                    <TextField
+                      id="New Password"
+                      label="New Password*"
+                      type="password"
+                      variant="outlined"
+                      fullWidth
+                    />
+                  </DialogContent>
+                  <DialogContent>
+                    <TextField
+                      id="Password Confirmation"
+                      label="Password Confirmation*"
+                      type="password"
+                      variant="outlined"
+                      fullWidth
+                    />
+                  </DialogContent>
+                  <DialogContent>
+                    <Button
+                      onClick={changePasswordClose}
+                      color="primary"
+                      variant="contained"
+                      fullWidth
+                    >
+                      Submit
+                    </Button>
+                  </DialogContent>
+                </Dialog>
+
+                <ListItem button key="Sign Out" onClick={handleDrawerClose}>
                   <ListItemText primary="Sign Out" />
                 </ListItem>
               </List>
@@ -416,7 +593,14 @@ export default function PersistentDrawerLeft() {
           </List>
           <Divider />
           <List>
-            <ListItem button key="개인정보처리약관">
+            <ListItem
+              button
+              key="개인정보처리약관"
+              onClick={() => {
+                history.push("/Terms");
+                handleDrawerClose();
+              }}
+            >
               <ListItemText primary="개인정보처리약관" />
             </ListItem>
           </List>
