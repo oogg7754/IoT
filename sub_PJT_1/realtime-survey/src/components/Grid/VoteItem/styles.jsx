@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   }
   ,
   & .leftAlign {
-    text-align: left;
+    // text-align: left;
+    float: left;
   }
   ,
   & .rightAlign {

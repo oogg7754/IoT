@@ -8,37 +8,36 @@
     {
       "optionTitle": "bibimbap",
       "targetUploadType": "image",
-      "uploadTargetPath": "bibimbap.jpg",
+      "uploadTargetPath": "https://cdn.pixabay.com/photo/2017/08/08/09/44/food-photography-2610863_1280.jpg",
       "is_selected": false
     },
     {
       "optionTitle": "Jeon",
       "targetUploadType": "image",
-      "uploadTargetPath": "jeon.jpg",
+      "uploadTargetPath": "https://cdn.pixabay.com/photo/2015/03/24/06/45/chijimi-687155_1280.jpg",
       "is_selected": false
     },
     {
       "optionTitle": "Cold noodles",
       "targetUploadType": "image",
-      "uploadTargetPath": "cold-noodle.jpg",
+      "uploadTargetPath": "https://cdn.pixabay.com/photo/2018/06/04/13/36/cold-noodles-3453218_1280.jpg",
       "is_selected": false
     },
     {
       "optionTitle": "Kimchi stew",
       "targetUploadType": "image",
-      "uploadTargetPath": "kimchi-stew.png",
+      "uploadTargetPath": "https://cdn.pixabay.com/photo/2020/02/17/04/23/cooking-4855383_1280.jpg",
       "is_selected": false
     },
     {
       "optionTitle": "Bulgogi",
       "targetUploadType": "image",
-      "uploadTargetPath": "bulgogi.jpg",
+      "uploadTargetPath": "https://cdn.pixabay.com/photo/2017/07/19/03/13/pot-2517765_1280.jpg",
       "is_selected": false
     }
   ],
   "vote_multi_yn": 0,
   "vote_opt_cnt": 5,
-  "vote_img_url": "http://mblogthumb2.phinf.naver.net/MjAxODAxMjlfMjE4/MDAxNTE3MTkyMDg1NDc4.rNgJE0gWyDuZm0NIwAbxVSXtYUL0FwKcg0jAAcTUI0kg.WI0EFy0eIQPtCTDM3rxsxwFde8lNiIOJCdfKhIRvEdUg.PNG.tjek1/%EC%A4%91%EC%8B%9D%EC%A1%B0%EB%A6%AC%EA%B8%B0%EB%8A%A5%EC%82%AC2018%2C01%2C29-105147-02.png?type=w800",
   "join_dt": "2020-04-03T06:54:33.000Z",
   "updt_dt": "2020-04-03T06:54:33.000Z",
   "vote_power_yn": 0,

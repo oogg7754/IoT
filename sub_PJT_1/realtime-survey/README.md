@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1주차 프로젝트 (React)
 
-## Available Scripts
+7/10(금)~7/12(일)
 
-In the project directory, you can run:
+- React 명세는 각자 진행, 기본적인 부분은 각자 공부해 오기로 함
+- 노마드 코더 React 기본 과정 수강하며 감 잡기 : 이때까지는 재밌었음
+- 스켈레톤 코드 구조 파악하기 : 이해하려고 노력했지만 도무지 무슨말인지 모르겠음...
+- 기본 강의를 더 수강해야되나 싶었지만 수요일까지 명세를 끝내기로 팀원들끼리 약속한지라, 모르더라도 어쩔수 없이 부딪혀 볼 수 밖에 없었음
 
-### `yarn start`
+7/13(월)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 스켈레톤 코드 기반으로 명세 1, 2 구현하기 시도 : 이해가 안가니 아무 생각없이 복붙만 하는 나 자신을 발견함...
+- 그래서 스켈레톤 코드 최대한 안보고 내 힘으로 구현해 보기로 결정함
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+7/14(화)
 
-### `yarn test`
+- 스켈레톤 코드가 복잡해 보이지만, material-UI를 기반으로 했다는 것을 깨달음 : material-UI가 React에서는 Bootstrap과 같은 역할인 듯
+-  material-UI에서 필요한 기능 찾아보고, 구글링해보며 적용 방법을 모색함
+- 월, 화 내내 React만 잡고 있으니 힘들긴 하지만 뭔가 얻는게 있겠거니 생각 하기로 함
+- 팀원들보다 속도가 느린거 같아 조금더 효율적인 방법 없을까 고민하기로 함
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+7/15(수)
 
-### `yarn build`
+- 스켈레톤 코드가 복잡해 보이지만, 이 중에 스타일링에 관련된 부분도 많다는 것을 깨달음 : 스타일링 보다는 React 코드의 구조를 이해하는 것을 중점으로 하기로 함 
+- 명세 4(보조화면 구현) : 라우팅은 생각보다 쉬웠고, 글만 적으면 되는 부분이라 금방 끝냄
+- 개인별 진척 사항 공유, 남은 명세 (6, 8, 9, 10) 분량 분배하여 힘 합쳐 완성하기로 함
+- 형준님이 명세 1~4 완성하여 해당 파일을 스켈레톤 코드로 하기로 함
+- 여기에 내가 구현한 명세 5를 접합하는 과정 진행, 접합 후 팀원들에게 공유(최종 스켈레톤 코드)
+- 오늘 8번 명세(유저 정보 변경, 비밀번호 변경) 담당하여 완성함. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7/16(목)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- 명세 5에 라우팅 기능 추가
+- 남은 명세 완성함, 원격 저장소에 올려 나눠갖기,  세부 디자인 다듬기
+- 아이디어 회의 : 사람들의 귀찮음을 극복해야 함, 새로운건 불가능, 기존 제품에서 차별점 생각하기.

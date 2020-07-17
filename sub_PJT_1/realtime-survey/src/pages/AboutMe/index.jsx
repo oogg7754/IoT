@@ -1,8 +1,8 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
-import Layout from '../../layout';
+import React from "react";
+import { Grid } from "@material-ui/core";
+import Layout from "../../layout";
 
-import Wrapper from './styles';
+import Wrapper from "./styles";
 const AboutMe = () => {
   return (
     <Layout>
@@ -10,13 +10,13 @@ const AboutMe = () => {
         <Grid className="about-me">
           <h2>ABOUT ME</h2>
           <Grid className="picture"></Grid>
-          <h3>Hyungjun Kim</h3>
+          <h3>Kyunghoon Kim</h3>
           <Grid container justify="center" className="info">
             <Grid item className="phone">
               +82 10 0000 0000
             </Grid>
             <Grid item className="email">
-              hyungjun268@gmail.com
+              kevinkim@gmail.com
             </Grid>
           </Grid>
           <h2>WHAT I DO</h2>

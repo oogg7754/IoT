@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 // import Header from "./Header/";
 import Drawer from "./Drawer/";
 import Footer from "./Footer/";
 import { Container } from "@material-ui/core";
-import { CommonContext } from "../context/CommonContext";
+
 import Wrapper from "./styles";
 
 const Layout = (props) => {

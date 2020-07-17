@@ -9,7 +9,7 @@ import dummyData from "./dump.json";
 // styles
 import { Grid, GridList } from "@material-ui/core";
 
-const VoteOptions = (props) => {
+const MyVoteOptions = (props) => {
   const nowCols = useNowCols();
   //const nowCols = useMediaQuery((theme) => theme.breakpoint.down("md"));
   const [datas, setDatas] = useState([]);
@@ -41,4 +41,4 @@ const VoteOptions = (props) => {
   );
 };
 
-export default VoteOptions;
+export default MyVoteOptions;

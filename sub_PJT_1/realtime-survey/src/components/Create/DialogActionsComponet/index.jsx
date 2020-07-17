@@ -11,95 +11,16 @@ import { ViewContext } from "../../../context/ViewContext";
 import Wrapper from "./styles";
 
 const DialogActionsComponet = () => {
-  const { serverUrl, user, setSignDialogOpen, setUser, setEndDt } = useContext(
-    CommonContext
-  );
+  const { setSignDialogOpen } = useContext(CommonContext);
 
   let history = useHistory();
 
-  const {
-    data,
-    title,
-    thumbnailImageData,
-    isMultipleChoice,
-    isPowerVoteChoice,
-    description,
-    readyToUpload,
-    category,
-    endDt,
-  } = useContext(ViewContext);
+  const { readyToUpload } = useContext(ViewContext);
 
   const createVoteHandler = async () => {
-    if (user.user_id === "") {
-      alert("Pleae sign in to upload.");
-      setSignDialogOpen(true);
-      return;
-    }
-
-    if (title === "") {
-      alert(`Please enter your vote title.`);
-      return;
-    }
-    if (category === 0) {
-      alert(`Please select your vote category.`);
-      return;
-    }
-
-    if (thumbnailImageData.img === "") {
-      alert(`Please register thumbnail image to upload your vote.`);
-      return;
-    }
-    if (data[0].optionTitle === "" || data[1].optionTitle === "") {
-      alert(`Option1 and option2 are mandatory.`);
-      return;
-    }
-
-    const formData = new FormData();
-
-    formData.append("files", thumbnailImageData.file);
-
-    for (const optionData of data) {
-      if (optionData.targetUploadType === "image") {
-        formData.append("files", optionData.uploadTarget);
-      }
-    }
-
-    var optionData = {
-      title: title,
-      description: description,
-      data: data.map((x) => {
-        return {
-          optionTitle: x.optionTitle,
-          targetUploadType: x.targetUploadType,
-          uploadTargetPath:
-            x.targetUploadType !== "image"
-              ? x.uploadTarget
-              : x.uploadTarget.path,
-        };
-      }),
-      isMultipleChoice,
-      category,
-      isPowerVoteChoice,
-      thumbnailImage: thumbnailImageData.file.path,
-      end_dt: endDt,
-    };
-
-    formData.append("optionData", JSON.stringify(optionData));
-
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data",
-        authorization: user.token,
-      },
-    };
-
-    console.log({ user });
-    console.log({ formData });
-    console.log({ config });
-
-    //
-    alert("Registered.");
-    history.push(`/MyVote`);
+    alert("Not implements yet.");
+    setSignDialogOpen(true);
+    return;
   };
 
   const handleClose = () => {

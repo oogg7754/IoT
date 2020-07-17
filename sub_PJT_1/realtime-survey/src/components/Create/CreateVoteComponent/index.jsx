@@ -18,12 +18,10 @@ import {
 import Wrapper from "./styles";
 import RadioButtonsGroup from "./../RadioButtonsGroup/index";
 //import BasicDateTimePicker from "./../DateTimePicker";
-import { CommonContext } from "../../../context/CommonContext";
+
 import { ViewContext } from "../../../context/ViewContext";
 import { useDropzone } from "react-dropzone";
 import NavigationIcon from "@material-ui/icons/Navigation";
-import { useHistory } from "react-router-dom";
-import Axios from "axios";
 
 import categoryDats from "./dump.json";
 
@@ -79,19 +77,10 @@ const InputTitleComponent = () => {
 };
 
 const SubTitleGroupComponent = () => {
-  const {
-    isMultipleChoice,
-    setIsMultipleChoice,
-    isPowerVoteChoice,
-    setIsPowerVoteChoice,
-  } = useContext(ViewContext);
+  const { isMultipleChoice, setIsMultipleChoice } = useContext(ViewContext);
 
   const onChangeIsMultipleChoiceHandler = (name) => (e) => {
     setIsMultipleChoice(e.target.checked);
-  };
-
-  const onChangeIsPowerVoteChoiceHandler = (name) => (e) => {
-    setIsPowerVoteChoice(e.target.checked);
   };
 
   return (
@@ -137,7 +126,6 @@ const SubTitleGroupComponent = () => {
 };
 
 const useGetCategoryDatas = (url) => {
-  const { serverUrl, user, setUser } = useContext(CommonContext);
   const [data, setData] = useState([]);
 
   const getDatas = async () => {

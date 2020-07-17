@@ -18,13 +18,10 @@ import {
 import {
   TextField,
   Dialog,
-  DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
 } from "@material-ui/core";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
+
 import SearchIcon from "@material-ui/icons/Search";
 import Badge from "@material-ui/core/Badge";
 import Drawer from "@material-ui/core/Drawer";
@@ -40,6 +37,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Wrapper from "./styles";
+
+import SurveyDialog from "../../components/Main/SurveyDialog";
 
 const drawerWidth = 240;
 
@@ -192,7 +191,7 @@ export default function PersistentDrawerLeft() {
                 <Typography
                   variant="h6"
                   className="logo"
-                  //onClick={onClickRedirectPathHandler('/MainVote')}
+                  onClick={onClickRedirectPathHandler("/MainVote")}
                 >
                   LOGO
                 </Typography>
@@ -204,6 +203,7 @@ export default function PersistentDrawerLeft() {
                       color="primary"
                       variant="contained"
                       className="display-none header-button"
+                      onClick={onClickRedirectPathHandler("/MainVote")}
                     >
                       Vote
                     </Button>
@@ -212,7 +212,7 @@ export default function PersistentDrawerLeft() {
                     <Button
                       color="primary"
                       variant="contained"
-                      //onClick={onClickRedirectPathHandler('/MyVote')}
+                      onClick={onClickRedirectPathHandler("/MyVote")}
                       className="display-none header-button"
                     >
                       My Vote
@@ -430,7 +430,7 @@ export default function PersistentDrawerLeft() {
               button
               key={"My Page"}
               onClick={() => {
-                history.push("/");
+                history.push("/MyVote");
                 handleDrawerClose();
               }}
             >
@@ -494,7 +494,7 @@ export default function PersistentDrawerLeft() {
                     Edit Profile{" "}
                   </DialogTitle>
                   <DialogContent>
-                    <Badge color="primary" variant="dot">
+                    <Badge color="primary" overlap="circle" badgeContent="+">
                       <Avatar src="/images/account_icon" />
                     </Badge>
                   </DialogContent>
@@ -606,6 +606,7 @@ export default function PersistentDrawerLeft() {
           </List>
         </Drawer>
       </Wrapper>
+      <SurveyDialog />
     </div>
   );
 }

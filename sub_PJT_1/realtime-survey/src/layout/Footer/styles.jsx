@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,13 +35,14 @@ const Wrapper = styled.div`
         & li {
           margin-bottom: 5px;
           color: #242424;
+          list-style-type: none;
         }
-      }
-      & p {
-        padding-top: 10px;
-        font-size: 16px;
-        color: #242424;
-        font-weight: 200;
+        & p {
+          padding-top: 10px;
+          font-size: 16px;
+          color: #242424;
+          font-weight: 200;
+        }
       }
     }
     & .right-box {
